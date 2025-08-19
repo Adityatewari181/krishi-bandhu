@@ -1,0 +1,16 @@
+**PM-KISAN Operational Guidelines — Key Eligibility, Exclusions & Aadhaar/e-KYC Rules**
+
+• Beneficiaries must have **Aadhaar authentication**; in absence of Aadhaar, Aadhaar enrolment number plus alternate ID (e.g., Voter ID, Driving Licence, NREGA job card) is permitted. e-KYC is mandatory (SMS/portal/face-based on mobile app).  
+  :contentReference[oaicite:0]{index=0}
+
+• **Exclusions** include:
+   - Income-tax payers
+   - Government employees (serving/retired, including regular staff but excluding Group D/MTS)
+   - Registered Professionals in practice—Doctors, Engineers, Lawyers, CAs, Architects  
+  :contentReference[oaicite:1]{index=1}
+
+• **Landholding cutoff date**: Must have cultivable land as per records **on or before 01.02.2019**. Transfers after this date generally render the new owner ineligible unless succession rules apply.  
+  :contentReference[oaicite:2]{index=2}
+
+• For North-Eastern States with community-held land (e.g., Nagaland, Manipur), **alternate verification mechanisms** are used—village council/authority certification, followed by administrative verification.  
+  :contentReference[oaicite:3]{index=3}

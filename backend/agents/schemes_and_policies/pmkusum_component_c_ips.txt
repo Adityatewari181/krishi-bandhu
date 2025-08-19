@@ -1,0 +1,18 @@
+**PM-KUSUM Component C — Individual Pump Solarisation (IPS)**
+
+• Target: Solarisation of grid-connected agriculture pumps under Component-C (IPS).
+
+• PV Capacity Allowed: Solar PV capacity up to **two times** the pump capacity in kilowatts (kW).
+• Power Use: Farmer uses solar energy for irrigation; **excess power is sold to DISCOMs** at pre-fixed tariffs.  
+  :contentReference[oaicite:0]{index=0}
+
+• Central Financial Assistance (CFA):  
+  – Standard regions: **30% of benchmark or tender cost**, whichever is lower.  
+  – Special Regions (NE, J&K, Himachal Pradesh, Uttarakhand, Lakshadweep, A&N Islands): **50% CFA**.  
+  – Farmers bear the remaining cost (~40%), typically with **10% upfront** and **30% via bank loan**.  
+  :contentReference[oaicite:1]{index=1}
+
+• Purpose & Implementation:  
+  Enables farmers to reduce diesel usage and generate income by selling surplus power.  
+  Implemented alongside stand-alone and feeder-level solarisation, targeting solarisation of **35 lakh pumps** collectively.  
+  :contentReference[oaicite:2]{index=2}

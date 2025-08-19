@@ -1,0 +1,12 @@
+**PM-KUSUM Component B (Standalone Solar Pumps) — Official Guidelines**
+
+• Central Financial Assistance (CFA): 30% of benchmark or tender cost (whichever is lower).  
+• In North-Eastern States, Sikkim, J&K, Ladakh, Himachal Pradesh, Uttarakhand, Lakshadweep & A&N Islands: CFA = 50%.  
+  :contentReference[oaicite:6]{index=6}
+
+• State Government subsidy: Minimum 30%.  
+• Remaining up to ~40% borne by farmer; bank loan may cover part of it, so upfront payment can be ~10%.  
+  :contentReference[oaicite:7]{index=7}
+
+• Pump capacity limit for CFA: Up to **7.5 HP**—CFA is limited as if 7.5 HP even if larger pump is installed.  
+  :contentReference[oaicite:8]{index=8}

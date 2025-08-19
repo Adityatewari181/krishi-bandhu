@@ -1,0 +1,13 @@
+**PMFBY — Scheme Overview (Wikipedia Summary)**
+
+• Launched: 18 February 2016  
+• Insured Risks:
+   - Prevented Sowing/Planting/Germination  
+   - Standing Crop Losses (natural fire, lightning, storm, hailstorm, cyclone, flood, drought, pests, landslide, etc.)  
+   - Post-Harvest Losses up to 2 weeks for crops in cut & spread condition  
+   - Localized Calamities (hailstorm, landslide, inundation, cloudburst, natural fire due to lightning)  
+   - Optional add-on for wild animal attacks in certain states  
+  :contentReference[oaicite:15]{index=15}
+
+• Coverage: Initially compulsory for loanee farmers; voluntary since 2020 for others.  
+  :contentReference[oaicite:16]{index=16}

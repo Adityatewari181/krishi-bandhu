@@ -1,0 +1,10 @@
+**PMFBY Operational Guidelines (2023) — Key Elements**
+
+• Prevented Sowing/Planting/Germination Risk: Coverage when insured area is prevented from sowing due to deficit rainfall/adverse conditions.  
+  :contentReference[oaicite:12]{index=12}
+
+• Mid-Season Adversity: Loss coverage when adverse seasonal conditions occur during growing period.  
+  :contentReference[oaicite:13]{index=13}
+
+• Notification Process: State/UT must declare notified Insurance Units (IUs) suffering prevented sowing within 7 days of DLMC survey report, via the NCIP portal.  
+  :contentReference[oaicite:14]{index=14}

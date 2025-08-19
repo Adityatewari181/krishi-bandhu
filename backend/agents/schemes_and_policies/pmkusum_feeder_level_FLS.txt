@@ -1,0 +1,11 @@
+**PM-KUSUM Component C – Feeder Level Solarisation (FLS)**
+
+• CFA: ₹1.05 crore per MW in standard regions.  
+• In special regions (NE, hilly states, islands): CFA: ₹1.75 crore per MW.  
+  :contentReference[oaicite:9]{index=9}
+
+• Project duration: About **25 years** (typical solarisation lifespan).  
+  :contentReference[oaicite:10]{index=10}
+
+• Enables states to solarise agricultural feeders in CAPEX or RESCO mode, reducing subsidy burden and improving daytime irrigation supply.  
+  :contentReference[oaicite:11]{index=11} 

@@ -1,0 +1,196 @@
+# config/azure_config.yaml
+# Unified policy & retrieval config for Finance & Policy Agent
+
+azure_openai:
+  provider: "azure"
+  endpoint: "${AZURE_OPENAI_ENDPOINT}"
+  api_key: "${AZURE_OPENAI_API_KEY}"
+  api_version: "2024-12-01-preview"
+  deployment_name: text-embedding-3-small
+  embedding_model: text-embedding-3-small
+
+retriever:
+  use_chroma: true
+  chroma_db_path: "chroma_db"
+  collection_name: "schemes_policies"
+  doc_folder: "agents/schemes_and_policies"
+  file_globs: ["*.txt", "*.md"]
+  rebuild_index_on_start: true
+
+geography:
+  special_regions:
+    - "arunachal_pradesh"
+    - "assam"
+    - "manipur"
+    - "meghalaya"
+    - "mizoram"
+    - "nagaland"
+    - "tripura"
+    - "sikkim"
+    - "jammu_kashmir"
+    - "ladakh"
+    - "himachal_pradesh"
+    - "uttarakhand"
+    - "lakshadweep"
+    - "andaman_nicobar_islands"
+
+schemes:
+
+  pm_kisan:
+    title: "PM-KISAN"
+    description: "Direct income support to eligible land-holding farmer families."
+    benefits:
+      annual_amount_inr: 6000
+      installments_per_year: 3
+      installment_amount_inr: 2000
+      installment_windows:
+        - { name: "Apr-Jul", months: [4,5,6,7] }
+        - { name: "Aug-Nov", months: [8,9,10,11] }
+        - { name: "Dec-Mar", months: [12,1,2,3] }
+    sources:
+      - "https://pmkisan.gov.in/"
+      - "https://pib.gov.in/PressNoteDetails.aspx?ModuleId=3&NoteId=154960"
+
+  kcc:
+    title: "Kisan Credit Card (KCC)"
+    description: "Short-term & term credit with interest subventions for farmers."
+    base_interest_rate_pct: 7.0
+    prompt_repayment_incentive_pct: 3.0
+    miss_subvention_to_banks_pct: 1.5
+    miss_cap_by_fy:
+      "2024-25": 300000
+      "2025-26": 500000
+    collateral_free:
+      general_limit_inr: 200000
+      tieup_limit_inr: 300000
+    sources:
+      - "https://pib.gov.in/PressReleasePage.aspx?PRID=2099696"
+      - "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2084395"
+
+  pmfby:
+    title: "Pradhan Mantri Fasal Bima Yojana"
+    description: "Crop insurance with capped farmer premiums & multiple risk covers."
+    premium_caps:
+      kharif_food_oilseed_pct: 2.0
+      rabi_food_oilseed_pct: 1.5
+      annual_commercial_horticultural_pct: 5.0
+    benefits:
+      prevented_sowing_pct_of_sum_insured: 25.0
+      mid_season_on_account_pct_of_sum_insured: 25.0
+      post_harvest:
+        duration_days: 14
+        perils: ["cyclone", "cyclonic_rains", "unseasonal_rains"]
+      localised_calamities:
+        perils: ["hailstorm", "landslide", "inundation", "cloud_burst", "natural_fire_due_to_lightning"]
+    calculation:
+      sum_insured_basis: "scale_of_finance_x_area"
+    state_overrides:
+      premium_subsidy:
+        north_eastern_and_himalayan:
+          central_pct: 90
+          state_pct: 10
+      exited_states:
+        - gujarat
+        - andhra_pradesh
+        - telangana
+        - jharkhand
+        - punjab
+        - west_bengal
+    sources:
+      - "https://pib.gov.in/Pressreleaseshare.aspx?PRID=1776583"
+
+  pm_kusum:
+    title: "PM-KUSUM"
+    description: "Solar pumps & solarisation subsidies—Components B, C, FLS."
+    components:
+      B:
+        max_supported_hp: 7.5
+        cfa_pct: 30.0
+        state_subsidy_min_pct: 30.0
+      C:
+        individual_pump_solarisation:
+          pv_capacity_limit_multiplier: 2.0
+          cfa_pct: 30.0
+          state_subsidy_min_pct: 30.0
+        feeder_level_solarisation:
+          cfa_cost_cap_per_mw_inr: 10500000
+          project_period_years: 25
+    state_overrides:
+      north_eastern_himalayan:
+        cfa_pct: 50.0
+    sources:
+      - "https://mnre.gov.in/en/pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum/"
+
+# ... rest of your config (embeddings, knowledge_base, eligibility_rules, etc.) remains unchanged ...
+
+# Knowledge Base Configuration
+knowledge_base:
+  chroma:
+    persist_directory: "chroma_db"
+    collection_name: "schemes_policies"
+  policy_documents_path: "agents/schemes_and_policies"
+
+# Embedding Configuration
+embeddings:
+  cache_duration_seconds: 86400
+  chunk_size_chars: 400        # Increased from 100 to 400
+  chunk_overlap_chars: 50      # Reduced from 25 to 50
+  top_k: 5
+  similarity_threshold: 0.65
+  token_chunking: true         # Enable tiktoken for better chunking
+  max_text_size_mb: 1
+  force_char_chunking: false   # Let tiktoken handle chunking
+  # Debug options
+  debug_chunking: true         # Enable to see chunking details
+  fallback_encoding: "cl100k_base"  # Better encoding for tiktoken
+  min_chunk_size: 200         # Minimum chunk size
+  max_chunk_size: 800         # Maximum chunk size
+
+# Eligibility Rules Configuration
+eligibility_rules:
+  pm_kisan:
+    annual_income_threshold: 1000000
+    requires_land_ownership: true
+    aadhaar_seeded_required: true
+    ekyc_required: true
+    # Boolean exclusion flags that agent can directly check
+    exclusion_flags:
+      income_tax_payer: false
+      government_employee: false
+      institutional_landholder: false
+      registered_professional_in_practice: false
+    # Original exclusion list kept for reference
+    exclusion_list:
+      - income_tax_payer
+      - government_employee
+      - institutional_landholder
+      - registered_professional_in_practice
+  kcc:
+    base_scale_of_finance_per_acre: 50000
+    max_credit_without_collateral: 200000  # Aligned with RBI rule (₹2L)
+    credit_buffer_pct: 0.3
+    # Note: Higher limits (₹3L+) available with collateral or bank tie-ups
+  crop_insurance:
+    sum_insured_per_acre: 50000
+    low_premium_crops: ["rice", "wheat", "maize"]
+    low_premium_rate: 0.02
+    high_premium_rate: 0.05
+    # Special region benefits
+    special_regions:
+      enhanced_coverage: true
+      reduced_premium: true
+      additional_benefits: ["prevented_sowing", "mid_season_on_account"]
+  
+  # PM-KUSUM special region logic
+  pm_kusum:
+    base_cfa_pct: 30.0
+    special_regions_cfa_pct: 50.0
+    special_regions_list: ["arunachal_pradesh", "assam", "manipur", "meghalaya", "mizoram", "nagaland", "tripura", "sikkim", "jammu_kashmir", "ladakh", "himachal_pradesh", "uttarakhand", "lakshadweep", "andaman_nicobar_islands"]
+
+# State Detection Configuration
+state_detection:
+  states_list: ["punjab", "haryana", "maharashtra", "karnataka", "uttar_pradesh", "uttarakhand", "delhi", "chandigarh", "jammu_kashmir", "ladakh", "himachal_pradesh", "madhya_pradesh", "chhattisgarh", "rajasthan", "gujarat", "goa", "dadra_nagar_haveli", "daman_diu", "west_bengal", "bihar", "jharkhand", "odisha", "sikkim", "tamil_nadu", "andhra_pradesh", "telangana", "kerala", "assam", "arunachal_pradesh", "manipur", "meghalaya", "mizoram", "nagaland", "tripura", "andaman_nicobar_islands", "lakshadweep", "puducherry"]
+  fallback: "punjab"
+
+logging:
+  level: "INFO"

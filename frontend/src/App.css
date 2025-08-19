@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS for Krishi Bandhu */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #f97316, #dc2626);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ea580c, #b91c1c);
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Floating animation class */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Shimmer effect for loading states */
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f97316, #dc2626, #ec4899);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Enhanced focus states */
+.focus-ring {
+  @apply focus:ring-4 focus:ring-orange-100 focus:border-orange-500;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-700 font-medium py-3 px-6 rounded-xl border-2 border-gray-200 hover:border-orange-300 hover:bg-orange-50 transition-all duration-300;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300;
+}
+
+.card-hover {
+  @apply hover:scale-105 hover:-translate-y-2;
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-orange-100 focus:border-orange-500 transition-all duration-300 bg-white/95 backdrop-blur-sm;
+}
+
+/* Icon container styles */
+.icon-container {
+  @apply w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg;
+}
+
+/* Status indicators */
+.status-success {
+  @apply bg-green-500 text-white;
+}
+
+.status-warning {
+  @apply bg-yellow-500 text-white;
+}
+
+.status-error {
+  @apply bg-red-500 text-white;
+}
+
+.status-info {
+  @apply bg-blue-500 text-white;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Responsive text utilities */
+.text-responsive {
+  @apply text-sm sm:text-base md:text-lg lg:text-xl;
+}
+
+/* Custom shadows */
+.shadow-agriculture {
+  box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04);
+}
+
+.shadow-agriculture-lg {
+  box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04);
+}
+
+/* Gradient backgrounds */
+.bg-agriculture {
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 25%, #fdba74 50%, #fb923c 75%, #f97316 100%);
+}
+
+.bg-agriculture-dark {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 25%, #4b5563 50%, #6b7280 75%, #9ca3af 100%);
+}
+
+/* Custom transitions */
+.transition-agriculture {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-agriculture-slow {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-2 hover:scale-105;
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25;
+}
+
+/* Custom borders */
+.border-agriculture {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #f97316, #dc2626) border-box;
+}
+
+/* Focus visible styles */
+.focus-visible\:ring-agriculture:focus-visible {
+  --tw-ring-color: rgb(249 115 22);
+  --tw-ring-offset-width: 4px;
+}
+
+/* Custom animations for agriculture theme */
+@keyframes leaf-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+@keyframes sun-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Animation classes */
+.leaf-float {
+  animation: leaf-float 4s ease-in-out infinite;
+}
+
+.sun-rotate {
+  animation: sun-rotate 20s linear infinite;
+}
+
+.rain-fall {
+  animation: rain-fall 2s linear infinite;
+}
+
+/* Custom scrollbar for agriculture theme */
+.agriculture-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.agriculture-scrollbar::-webkit-scrollbar-track {
+  background: linear-gradient(135deg, #fef3c7, #fed7aa);
+  border-radius: 6px;
+}
+
+.agriculture-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #f97316, #dc2626);
+  border-radius: 6px;
+  border: 2px solid #fef3c7;
+}
+
+.agriculture-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ea580c, #b91c1c);
+}
+
+/* Dark mode adjustments */
+.dark .agriculture-scrollbar::-webkit-scrollbar-track {
+  background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+.dark .agriculture-scrollbar::-webkit-scrollbar-thumb {
+  border-color: #374151;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break {
+    page-break-before: always;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .border-gray-200 {
+    border-color: #000000;
+  }
+  
+  .text-gray-600 {
+    color: #000000;
+  }
+  
+  .bg-gray-50 {
+    background-color: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .float-animation,
+  .pulse-glow,
+  .shimmer,
+  .leaf-float,
+  .sun-rotate,
+  .rain-fall {
+    animation: none !important;
+  }
+}

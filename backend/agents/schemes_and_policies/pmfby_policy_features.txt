@@ -1,0 +1,23 @@
+**Pradhan Mantri Fasal Bima Yojana (PMFBY) — Key Policy Features**
+
+• Maximum premium payable by the farmer:
+   – 2% for all Kharif Food & Oilseeds crops
+   – 1.5% for Rabi Food & Oilseeds crops
+   – 5% for Annual Commercial/Horticultural crops
+  :contentReference[oaicite:0]{index=0}
+
+• Prevented Sowing/Planting: If most insured farmers in a notified area are prevented from sowing due to adverse weather, indemnity claims up to **25% of the sum insured** are eligible.  
+  :contentReference[oaicite:1]{index=1}
+
+• On-Account (Mid-Season) Payment: When expected yield falls below 50% of normal, an “on-account” payment of up to 25% of sum insured is provided.  
+  :contentReference[oaicite:2]{index=2}
+
+• Post-Harvest Losses: Individual farm-level coverage up to **14 days** from harvest for crops left in “cut & spread” condition against perils like cyclone, cyclonic rains, unseasonal rains.  
+  :contentReference[oaicite:3]{index=3}
+
+• Localized Calamities: Field-level indemnity for hailstorm, landslide, inundation.  
+  :contentReference[oaicite:4]{index=4}
+
+• Standing Crop Risks (non-preventable):
+   Cover for yield losses due to natural fire, lightning, storm, hailstorm, cyclone, flood, inundation, drought, pests, landslide, etc.  
+  :contentReference[oaicite:5]{index=5}
